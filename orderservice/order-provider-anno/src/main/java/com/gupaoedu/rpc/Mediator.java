@@ -7,12 +7,17 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 中介类
- * 储存钥发布的类和方法信息
+ * 储存要发布的类和方法信息
  */
 public class Mediator {
-    //储存钥发布的服务的实例
+    //储存要发布的服务的实例
     public static Map<String, BeanMethod> map = new ConcurrentHashMap<>();
 
+    /**
+     * 传入客户端的调用信息，利用反射执行服务
+     * @param request
+     * @return
+     */
     public static Object processor(RpcRequest request) {
         String key = request.getClassName() + "." + request.getMethodName();
         BeanMethod beanMethod = map.get(key);

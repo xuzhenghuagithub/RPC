@@ -8,6 +8,14 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 @Component
 public class InitialMediator implements BeanPostProcessor {
+    /**
+     * postProcessAfterInitialization
+     * 在Bean初始化之后将服务接口实例放入Mediator中
+     * @param bean
+     * @param beanName
+     * @return
+     * @throws BeansException
+     */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         //bean创建之后加入到Mediator中
