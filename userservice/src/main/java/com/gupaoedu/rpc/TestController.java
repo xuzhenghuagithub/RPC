@@ -12,7 +12,7 @@ public class TestController {
 
     /**
      *http://localhost:8080/queryOrderList
-     * @return
+     * @return 利用动态代理，调用RemoteIonvocationHandler代理后的invoke发送远程请求
      */
     @GetMapping("queryOrderList")
     public String queryOrderList() {
